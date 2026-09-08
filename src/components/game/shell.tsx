@@ -17,7 +17,7 @@ import {
   X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { ThemeToggle } from "@/components/game/theme-toggle";
+import { FirstVisitTutorial } from "@/components/game/tutorial";
 import { useGameContext } from "@/lib/game-context";
 import { formatMoney } from "@/game/state";
 import { lifestyles } from "@/game/data";
@@ -94,7 +94,7 @@ export function GameShell({
   return (
     <div className="glitter min-h-screen">
       <div className="mx-auto flex max-w-[1600px]">
-        <aside className="sticky top-0 hidden h-screen w-60 shrink-0 flex-col gap-6 border-r border-border/70 bg-sidebar/80 px-4 py-6 backdrop-blur-xl lg:flex">
+        <aside data-tutorial="navigation" className="sticky top-0 hidden h-screen w-60 shrink-0 flex-col gap-6 border-r border-border/70 bg-sidebar/80 px-4 py-6 backdrop-blur-xl lg:flex">
           <div>
             <p className="font-display text-xl leading-tight text-gradient-gold">
               Hooker &amp; Millions
@@ -114,6 +114,7 @@ export function GameShell({
           <header className="sticky top-0 z-20 border-b border-border/70 bg-background/80 px-4 py-3 backdrop-blur-xl">
             <div className="flex items-center gap-3">
               <Button
+                data-tutorial="navigation"
                 variant="outline"
                 size="icon"
                 className="lg:hidden"
@@ -128,8 +129,8 @@ export function GameShell({
                   <p className="truncate text-xs text-muted-foreground">{subtitle}</p>
                 ) : null}
               </div>
-              <ThemeToggle className="shrink-0" />
               <Button
+                data-tutorial="advance-day"
                 onClick={nextDay}
                 className="glow-magenta shrink-0 bg-primary font-semibold hover:bg-primary/90"
               >
@@ -139,7 +140,7 @@ export function GameShell({
             </div>
 
 
-            <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3 xl:grid-cols-7">
+            <div data-tutorial="status" className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3 xl:grid-cols-7">
               <StatusChip label="Day" value={hydrated ? String(state.currentDay) : "—"} />
               <StatusChip label="Lifestyle" value={lifestyle?.label ?? "Low"} tone="magenta" />
               <StatusChip label="Reputation" value={String(state.player.reputation)} />
@@ -165,7 +166,6 @@ export function GameShell({
             <div className="flex items-center justify-between">
               <p className="font-display text-lg text-gradient-gold">Hooker &amp; Millions</p>
               <div className="flex items-center gap-2">
-                <ThemeToggle withLabel />
                 <Button variant="ghost" size="icon" onClick={() => setNavOpen(false)}>
                   <X className="size-4" />
                 </Button>
@@ -175,6 +175,7 @@ export function GameShell({
           </div>
         </div>
       ) : null}
+      <FirstVisitTutorial />
     </div>
   );
 }
