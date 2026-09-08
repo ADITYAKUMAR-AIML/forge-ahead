@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { GameProvider } from "@/lib/game-context";
 import { Toaster } from "@/components/ui/sonner";
+import { ThemeProvider, themeInitScript } from "@/lib/theme";
 
 function NotFoundComponent() {
   return (
@@ -117,9 +118,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark" style={{ colorScheme: "dark" }} suppressHydrationWarning>
       <head>
         <HeadContent />
+        <script dangerouslySetInnerHTML={{ __html: themeInitScript }} />
       </head>
       <body>
         {children}
@@ -134,11 +136,13 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <GameProvider>
+      <ThemeProvider>
+        <GameProvider>
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
         <Outlet />
-        <Toaster position="top-right" richColors />
-      </GameProvider>
+          <Toaster position="top-right" richColors />
+        </GameProvider>
+      </ThemeProvider>
     </QueryClientProvider>
   );
 }
