@@ -46,7 +46,7 @@ function Dashboard() {
 
   return (
     <GameShell title="Dashboard" subtitle="Your empire at a glance">
-      <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      <div data-tutorial="overview" className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         <Stat label="Net worth" value={formatMoney(state.netWorth)} tone="gold" />
         <Stat
           label="Liquid cash"
