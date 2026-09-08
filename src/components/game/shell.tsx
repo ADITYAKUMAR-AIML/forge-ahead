@@ -127,6 +127,7 @@ export function GameShell({
                   <p className="truncate text-xs text-muted-foreground">{subtitle}</p>
                 ) : null}
               </div>
+              <ThemeToggle className="shrink-0" />
               <Button
                 onClick={nextDay}
                 className="glow-magenta shrink-0 bg-primary font-semibold hover:bg-primary/90"
@@ -135,6 +136,7 @@ export function GameShell({
                 Advance day
               </Button>
             </div>
+
 
             <div className="mt-3 grid grid-cols-2 gap-2 sm:grid-cols-3 xl:grid-cols-7">
               <StatusChip label="Day" value={hydrated ? String(state.currentDay) : "—"} />
