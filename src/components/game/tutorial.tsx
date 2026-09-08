@@ -120,6 +120,22 @@ export function FirstVisitTutorial() {
       if (event.key === "Escape") finish();
       if (event.key === "ArrowRight") setStepIndex((current) => Math.min(current + 1, steps.length - 1));
       if (event.key === "ArrowLeft") setStepIndex((current) => Math.max(current - 1, 0));
+      if (event.key === "Tab") {
+        const controls = Array.from(
+          cardRef.current?.querySelectorAll<HTMLElement>("button:not([disabled])") ?? [],
+        );
+        if (!controls.length) return;
+        const first = controls[0];
+        const last = controls[controls.length - 1];
+        if (!first || !last) return;
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
     };
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
