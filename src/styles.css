@@ -244,3 +244,39 @@
 @utility tabular {
   font-variant-numeric: tabular-nums;
 }
+
+/* Day-theme variants of the decorative surfaces. */
+.light .panel {
+  background: linear-gradient(160deg, oklch(1 0 0 / 0.92), oklch(0.97 0.012 88 / 0.88));
+  border: 1px solid oklch(0.55 0.08 330 / 0.22);
+  box-shadow:
+    0 1px 0 oklch(1 0 0 / 0.8) inset,
+    0 18px 40px -30px oklch(0.3 0.06 320 / 0.5);
+}
+
+.light .panel-gold {
+  border-color: oklch(0.6 0.13 78 / 0.45);
+  box-shadow:
+    0 0 0 1px oklch(0.6 0.13 78 / 0.16),
+    0 18px 40px -30px oklch(0.3 0.06 320 / 0.5);
+}
+
+.light .glow-magenta {
+  box-shadow: 0 0 24px -8px oklch(0.5 0.2 340 / 0.35);
+}
+
+.light .glitter::before {
+  opacity: 0.28;
+  background-image:
+    radial-gradient(1.5px 1.5px at 20% 30%, oklch(0.6 0.13 78 / 0.5), transparent 60%),
+    radial-gradient(1.5px 1.5px at 70% 15%, oklch(0.5 0.2 340 / 0.3), transparent 60%),
+    radial-gradient(1.5px 1.5px at 45% 70%, oklch(0.42 0.155 12 / 0.32), transparent 60%),
+    radial-gradient(1.5px 1.5px at 85% 60%, oklch(0.6 0.13 78 / 0.35), transparent 60%),
+    radial-gradient(1.5px 1.5px at 10% 85%, oklch(0.5 0.2 340 / 0.22), transparent 60%);
+}
+
+.light .text-gradient-gold {
+  background: linear-gradient(100deg, oklch(0.55 0.13 74), oklch(0.42 0.155 12));
+  background-clip: text;
+  color: transparent;
+}
