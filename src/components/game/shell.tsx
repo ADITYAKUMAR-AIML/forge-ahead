@@ -17,6 +17,7 @@ import {
   X,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ThemeToggle } from "@/components/game/theme-toggle";
 import { useGameContext } from "@/lib/game-context";
 import { formatMoney } from "@/game/state";
 import { lifestyles } from "@/game/data";
@@ -163,9 +164,12 @@ export function GameShell({
           <div className="relative flex h-full w-72 max-w-[85%] flex-col gap-6 border-r border-border bg-sidebar px-4 py-6">
             <div className="flex items-center justify-between">
               <p className="font-display text-lg text-gradient-gold">Hooker &amp; Millions</p>
-              <Button variant="ghost" size="icon" onClick={() => setNavOpen(false)}>
-                <X className="size-4" />
-              </Button>
+              <div className="flex items-center gap-2">
+                <ThemeToggle withLabel />
+                <Button variant="ghost" size="icon" onClick={() => setNavOpen(false)}>
+                  <X className="size-4" />
+                </Button>
+              </div>
             </div>
             {nav}
           </div>
