@@ -1,14 +1,23 @@
-# Welcome to your Lovable project
+# Forge Ahead
+
+https://github.com/ADITYAKUMAR-AIML/forge-your-fortune/
+
+PULL THIS SHIT HERE
+
+This is the repository. Go through it very, very carefully, okay?  And just pls understand everything, go through everything: every file, every fucking thing, every code, carefully and deeply, and understand the bullshit. 
+
+
+And be ready for adding the day/night toggle for the theme toggle on that website, okay?
 
 This project was built with [Lovable](https://lovable.dev).
 
 ## Build with Lovable
 
-Open your project in the [Lovable editor](https://lovable.dev) and keep building.
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/bcaaa7d2-e016-4929-9633-ed4cc06e4d5c).
 
 - **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: connect the project to GitHub and every change made in Lovable is committed straight to your repository.
-- **Full ownership**: this code is yours. Push to your repository and your changes sync back into Lovable, ready for your next prompt.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
 
 ## Development
 
@@ -20,10 +29,3 @@ cd <repository-name>
 npm i
 npm run dev
 ```
-
-## Built with
-
-- TanStack Start
-- TypeScript
-- React
-- Tailwind CSS
